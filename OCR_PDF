@@ -1,4 +1,0 @@
-from pytesser import*
-import os
-file=input("file?")
-im=Image.open(
