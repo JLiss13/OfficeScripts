@@ -31,17 +31,18 @@ def PrintToCSVReport(ReportFile,Data1):
             print >> f, line # Inserts line of appended array to each new line of "DSD Invoice Organization Report.txt"
 
 plt.close('all')
+cwd = os.getcwd()
 FilepathofOriginal=raw_input("What path to the PDF to be read?") # Path of DSD Account Statement PDf to be read
 filenamePDf=file(FilepathofOriginal,'rb') # Read PDF
 inputpdf=PdfFileReader(filenamePDf) # Run through PdfFileReader engine
-Folderpathdestination='M:\Engineering\SD Dev Services Deposit Account Statements' # Final destination of organized files
-Folderpath_Of_workspace='C:\Users\jli\Dropbox\SANDAG\PDF OCR' # Place Tiff files in this same folder to be read
+Folderpathdestination= cwd + 'Account Statements' # Final destination of organized files
+Folderpath_Of_workspace=cwd # Place Tiff files in this same folder to be read
 os.chdir(Folderpath_Of_workspace)
 # nameOtiff=raw_input('name of imagefile to be modified?')
 Filelist=os.listdir(Folderpath_Of_workspace)
 Filelist=filter(lambda k: 'DSD' in k, Filelist)
 Filelist=filter(lambda k: '.tif' in k, Filelist)# only files from Filenames list
-DSDInvoiceReport='C:\Users\jli\Dropbox\SANDAG\PDF OCR\DSDInvoiceReport.txt'
+DSDInvoiceReport=cwd + Report.txt'
 drawing_num=raw_input('What is the beginning drawing number?') # Choose the page to start the process from
 drawing_num=int(drawing_num)-1
 PDFFileName=''
@@ -50,7 +51,7 @@ Project_Num_Date1=raw_input('Whats the date of the invoices? (mm/dd/yyy)')
 #Loop over all DSD tiff files
 for nameOtiff in Filelist:
     #plt.close('all')
-    Folderpath_Of_workspace='C:\Users\jli\Dropbox\SANDAG\PDF OCR'
+    Folderpath_Of_workspace=cwd
     os.chdir(Folderpath_Of_workspace)
     nameOtiff=Filelist[drawing_num]
     print nameOtiff
