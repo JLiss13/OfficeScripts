@@ -23,17 +23,18 @@ def PrintToCSVReport(ReportFile,Data1):
             print >> f, line # Inserts line of appended array to each new line of "DSD Invoice Organization Report.txt"
 
 plt.close('all')
-FilepathofOriginal='P:\Jordan_Liss\DSD Invoices\Original Scanned PDF Files\DSD_Invoices_Historical.pdf'
+cwd = os.getcwd()
+FilepathofOriginal=cwd+'Original Scanned PDF Files\DSD_Invoices_Historical.pdf'
 filenamePDf=file(FilepathofOriginal,'rb') # Read PDF
 inputpdf=PdfFileReader(filenamePDf) # Run through PdfFileReader engine
-Folderpathdestination='M:\Engineering\SD Dev Services Deposit Account Statements' # Place Tiff files in this same folder to be read
-Folderpath_Of_code='C:\Users\jli\Dropbox\SANDAG\PDF OCR'
+Folderpathdestination=cwd + 'Account Statements' # Place Tiff files in this same folder to be read
+Folderpath_Of_code=cwd
 os.chdir(Folderpath_Of_code)
 # nameOtiff=raw_input('name of imagefile to be modified?')
 Filelist=os.listdir(Folderpath_Of_code)
 Filelist=filter(lambda k: 'DSD' in k, Filelist)
 Filelist=filter(lambda k: '.tif' in k, Filelist)# only files from Filenames list
-DSDInvoiceReport='C:\Users\jli\Dropbox\SANDAG\PDF OCR\DSDInvoiceReport.txt'
+DSDInvoiceReport=cwd + 'DSDInvoiceReport.txt'
 drawing_num=raw_input('What is the beginning drawing number?')
 drawing_num=int(drawing_num)
 PDFFileName=''
@@ -41,7 +42,7 @@ PDFFileName=''
 #Loop over all DSD tiff files
 for nameOtiff in Filelist:
     #plt.close('all')
-    Folderpath_Of_code='C:\Users\jli\Dropbox\SANDAG\PDF OCR'
+    Folderpath_Of_code=cwd
     os.chdir(Folderpath_Of_code)
     nameOtiff=Filelist[drawing_num]
     print nameOtiff
