@@ -22,7 +22,7 @@ for folder in folderlist:
         files = filter(lambda k: not '_HOST_' in k, files)
         files = list(files)
         csvarray = pd.read_csv(os.path.join(root,files[0]), sep = " ", header = 1,
-                    names = ["UnixTimeStamp", files[0]])
+                    names = ["UnixTimeStamp", files[0]]) #Obtains preexisting excel file or makes a new one using the first one as an example. It also takes notes of UnixTimeStamp column.
         sizefilesarray=len(files)
         for filename in files[1:sizefilesarray]:
             print(filename)

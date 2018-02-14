@@ -24,13 +24,13 @@ If you have the code running correctly the code will prompt you:
 
 *What is the root directory where the data server health files are?*
 
-Type in [C:\ROOT DIRECTORY] or [USERS/ROOT DIRECTORY] There's no need for quotations.
+Type in [ROOT DIRECTORY OF .CSV FILES] There's no need for quotations.
 
 *What to do you want the final excel workbook to be called?*
 
-*Type in name of the final excel workbook you want it to be.*
+Type in name of the final excel workbook you want it to be.
 
-*If run it successfully you should get something like this:*
+If run successfully you should get something like this:
 
 *Folder name FIRST DIRECTORY-------------------------------*
 
