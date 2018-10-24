@@ -1,5 +1,6 @@
 #Created by Jordan Liss
 # Replace any string in a file name
+# Use Python3 so you don't have to input strings with apostrophes
 import os
 # Part1Folder='M:\Engineering\Current_Configuration\MTS_Rails\Downtown (Bayside, C St, Park, Broadway)' # Grab large filepath
 # Part2Folder='Track\Civil\LRT 450_Bayside' # Grab part 2 of large filepath
